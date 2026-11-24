@@ -386,3 +386,25 @@ body.laeuft .platte__rillen{animation:dreht 7s linear infinite}
   .platte__rillen,.siegel__ring,.herz,.erologo__herz{animation:none}
   .buehne__ende{opacity:1}
 }
+
+/* ---------- Textseiten (Impressum, Datenschutz) ---------- */
+.textseite{padding:clamp(48px,7vw,96px) 0 clamp(64px,8vw,110px);background:var(--creme)}
+.textseite .innen{max-width:760px}
+.textseite h1{font-weight:900;text-transform:uppercase;letter-spacing:-.025em;line-height:.96;
+  font-size:clamp(34px,5.4vw,62px);margin-bottom:10px}
+.textseite .vorspann{color:color-mix(in srgb,var(--navy) 66%,transparent);font-size:17px;margin-bottom:40px}
+.textseite h2{font-size:clamp(19px,2.2vw,24px);font-weight:900;text-transform:uppercase;
+  letter-spacing:-.01em;margin:38px 0 12px}
+.textseite h3{font-size:16px;font-weight:800;margin:22px 0 6px}
+.textseite p,.textseite li{font-size:16px;line-height:1.7;
+  color:color-mix(in srgb,var(--navy) 86%,transparent)}
+.textseite p+p{margin-top:12px}
+.textseite ul{margin:10px 0 0;display:grid;gap:7px}
+.textseite ul li{padding-left:20px;position:relative}
+.textseite ul li::before{content:"";position:absolute;left:4px;top:11px;width:6px;height:6px;
+  border-radius:50%;background:var(--blau)}
+.textseite a{color:var(--blau);text-underline-offset:3px}
+.textseite .kasten{background:#fff;border-radius:var(--r-m);padding:24px 26px;
+  box-shadow:var(--schatten-karte);margin-top:18px}
+.textseite .kasten p{margin:0}
+.textseite .zurueck{margin-top:48px}

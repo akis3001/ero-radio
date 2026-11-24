@@ -1,0 +1,39 @@
+# ERO Radio — Server-Regeln
+# Die Seite ist rein statisch: kein PHP, keine Formulare, keine Cookies.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Alles über HTTPS ausliefern
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  # Inhaltsrichtlinie: eigene Dateien, der eigene Stream, YouTube erst nach Klick.
+  # 'unsafe-inline' für Stil, weil einzelne Elemente Inline-Stile tragen.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com; font-src 'self'; media-src https://stream.ero-radio.de:8000; connect-src 'self' https://stream.ero-radio.de:8000; frame-src https://www.youtube-nocookie.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/json text/plain
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/avif "access plus 6 months"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Verzeichnisauflistung aus
+Options -Indexes

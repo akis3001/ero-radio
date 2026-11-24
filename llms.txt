@@ -1,0 +1,29 @@
+# ERO Radio
+
+> ERO Radio ist ein griechisches Webradio fuer die Omogenia. Die Website bietet direkten Zugriff auf den Livestream, Informationen zum Programm, ausgewaehlte YouTube-Videos und Kontaktinformationen.
+
+## Website
+
+- URL: https://ero-radio.de/
+- Sprache: Griechisch
+- Marke: ERO Radio / Elliniko Radiofono Omogenias
+- Kategorie: Greek Webradio, Online Radio, Musik, Omogenia
+
+## Livestream
+
+- Stream: https://stream.ero-radio.de:8000/radio.mp3
+- Metadaten: https://stream.ero-radio.de:8000/status-json.xsl
+
+## Wichtige Bereiche
+
+- Startseite mit Live-Player
+- YouTube-Videos
+- Programmuebersicht
+- Facebook-Community
+- Kontakt
+
+## Kontakt
+
+- E-Mail: info@ero-radio.de
+- Telefon: +49 (0) 2173 - 93 21 20
+- Adresse: Krischerstr. 3, 40789 Monheim a.Rh., Deutschland
